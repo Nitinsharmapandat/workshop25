@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href=" " type="image/x-icon">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Angular WorkShop</title>
+</head>
+
+<body ng-app="Factory-Training" class="bodypart">
+
+    <div class="box">
+        <h1 class="title">WorkShop 25</h1>
+       
+        <div class="box">
+            <label>Enter text below to convert it to Bold</label><br>
+            <input type="text" ng-model="boldText">
+            <p ng-bind="boldText" class="bold"></p>
+        </div>
+
+        <div class="box">
+            <label>Enter Epoch Time</label><br>
+            <input type="date" id="epochTime" ng-model="epochTime">
+            <p>{{ epochTime*1000 | date: 'yyyy-MMMM-dd EEEE HH:mm:ss Z' }}</p>
+        </div>
+
+        <div class="box">
+            <div ng-controller="MainController">
+                <div ng-repeat="item in list">
+                    <li>{{ item }}</li>
+                </div>
+            </div>
+
+          
+            <div ng-controller="randomController">
+                <center><button ng-click="generateRandomNumber()">click</button></center>
+                <p>{{ generateNumber }}</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript/app.js"></script>
+    <script src="javascript/controller/controller.js"></script>
+</body>
+
+</html>
